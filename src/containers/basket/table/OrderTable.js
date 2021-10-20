@@ -22,7 +22,6 @@ const TableHeader = styled.h3`
 `;
 
 export default function OrderTable({products, pricePrefix, onUpdate, onDelete}) {
-  console.log('Object.entries(products) ==>',Object.entries(products));
   return (
     <StyledTable>
         <TableHeader>Review Your Order</TableHeader>

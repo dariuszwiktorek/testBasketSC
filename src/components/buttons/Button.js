@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import { THEME_COLORS } from '../../app/styles';
 
 
 const ButtonContainer = styled.button`
   flex: 1;
   font-size: ${({size}) => size==='large'? 1.6 : 1}rem;
   font-weight: 600;
-  background: ${({color}) => color};
+  background: ${({color, disable}) => disable? 'lightgray' :color};
   color: white;
   border-radius: ${({size}) => size==='large'? 40 : 4}px;
   padding: ${({size}) => size==='large'? '20px 40px' : '5px'};

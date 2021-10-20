@@ -82,11 +82,10 @@ export function QuantityInput({onChange, initValue}) {
   }, [validateCountdown]);
 
 
-
   return (
     <Container>
       <StyledInput type="text" value={value} onChange={(e) => { onTextInputChange(e.target.value) }} />
-      <Button label='-' color={THEME_COLORS.orange} onClick={() => { onButton(-1) }} style={{margin: 0}}/>
+      <Button label='-' disable={value<=1}color={THEME_COLORS.orange} onClick={() => { onButton(-1) }} style={{margin: 0}}/>
       <Button label='+' color={THEME_COLORS.green} onClick={() => { onButton(1) }} style={{marginLeft: 4}}/>
     </Container>
   );

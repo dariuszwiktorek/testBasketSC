@@ -36,8 +36,8 @@ export default function Basket() {
   if (!basketData || !basketData.products)
     return null;
 
-  const {pricePrefix, subtotal, vat, total} = basketData
-  console.log('basketItems',basketData);
+  const {pricePrefix, subtotal, vat, total} = basketData;
+  
   return (
     <StyledBasket>
         <BasketHeader>Review Your Order & Complete Checkout</BasketHeader>

@@ -14,19 +14,19 @@ const StyledRow = styled.div`
   font-weight: ${({bold})=> bold? 600 : 400}
 `;
 
-const ProductNameCell = styled.div`
-  flex: 0 1 180px;
-  text-align: left;
-  padding: 0 20px;
-`;
-const UnitPriceCell = styled.div`
-  flex 0 1 80px;
-`;
-
 const Cell = styled.div`
   flex: 1 1 auto;
   min-height: 30px;
   min-width: 30px;
+`;
+
+const ProductNameCell = styled(Cell)`
+  flex: 0 1 180px;
+  text-align: left;
+  padding: 0 20px;
+`;
+const UnitPriceCell = styled(Cell)`
+  flex 0 1 80px;
 `;
 
 
@@ -52,13 +52,7 @@ export default function OrderTableRow({
   onUpdate,
   onDelete,
 }) {
-  console.log('OrderTableRow: ',{product,
-    id,
-    unitPrice,
-    quantity,
-    pricePrefix,
-    onUpdate,
-    onDelete,});
+  
   return (
     <StyledRow>
         <ProductNameCell>{product}</ProductNameCell>
