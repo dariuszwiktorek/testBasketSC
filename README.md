@@ -1,4 +1,4 @@
-# This is WIP
+# This is working now although it still needs some work to tidy it up.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
