@@ -25,6 +25,8 @@ const UnitPriceCell = styled.div`
 
 const Cell = styled.div`
   flex: 1 1 auto;
+  min-height: 30px;
+  min-width: 30px;
 `;
 
 

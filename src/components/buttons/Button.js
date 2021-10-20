@@ -11,7 +11,8 @@ const ButtonContainer = styled.button`
   padding: ${({size}) => size==='large'? 10 : 5}px;
   border: none;
   margin: 10px;
-  min-width: 10px;
+  min-width: 30px;
+  max-width: 220px;
 `;
 
 //common button with potential to add an icon

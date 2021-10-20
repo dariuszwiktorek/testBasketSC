@@ -23,7 +23,8 @@ const StyledBasket = styled.div`
   display: flex;
   flex-direction: column;
   margin: 40px;
-  max-width: 1200px;
+  max-width: 800px;
+  margin: 40px auto;
 `;
 
 export default function Basket() {

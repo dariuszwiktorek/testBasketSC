@@ -11,6 +11,7 @@ const StyledInput = styled.input`
   width: 30px;
   text-align: center;
   margin-right: 10px;
+  height: 20px;
 `;
 
 //TODO:Refactor this one
@@ -85,8 +86,8 @@ export function QuantityInput({onChange, initValue}) {
   return (
     <Container>
       <StyledInput type="text" value={value} onChange={(e) => { onTextInputChange(e.target.value) }} />
-      <Button label='-' color={THEME_COLORS.orange} onClick={() => { onButton(-1) }}/>
-      <Button label='+' color={THEME_COLORS.green} onClick={() => { onButton(1) }}/>
+      <Button label='-' color={THEME_COLORS.orange} onClick={() => { onButton(-1) }} style={{margin: 0}}/>
+      <Button label='+' color={THEME_COLORS.green} onClick={() => { onButton(1) }} style={{marginLeft: 4}}/>
     </Container>
   );
 
