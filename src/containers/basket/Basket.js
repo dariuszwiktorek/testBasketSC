@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from "styled-components";
 import { THEME_COLORS } from '../../app/styles';
@@ -32,6 +32,17 @@ export default function Basket() {
 
   const basketData = useSelector(selectBasket);
   const dispatch = useDispatch();
+  const [disableInputs, SetDisableInputs] = useState(false);
+  
+  const {itemsCount, status} = basketData;
+
+  useEffect(()=>{
+    console.log({itemsCount, status});
+    SetDisableInputs( itemsCount<1 || status!=="idle");
+    if(status==="done"){
+      alert("Purchase complete");
+    }
+  }, [itemsCount, status]);
 
   if (!basketData || !basketData.products)
     return null;
@@ -47,6 +58,7 @@ export default function Basket() {
           pricePrefix={pricePrefix}
           onUpdate={(uid, value) => dispatch(updateQuantity({ uid, value })) }
           onDelete={(uid) => dispatch(deleteProduct({ uid })) }
+          disable={disableInputs}
         />
         <Divider />
         <OrderSummary label='Subtotal' amount={`${pricePrefix}${subtotal.toFixed(2)}`}/>
@@ -54,7 +66,9 @@ export default function Basket() {
         <Divider />
         <OrderSummary label='Total' amount={`${pricePrefix}${total.toFixed(2)}`} total/>
         <Divider />
-        <Button label='Buy Now' onClick={() => { dispatch(buyNow())}} size={Button.SIZE.large} color={THEME_COLORS.seledin} style={{alignSelf: 'end'}}/>
+        <Button disable={disableInputs} onClick={() => { dispatch(buyNow())}} size={Button.SIZE.large} color={THEME_COLORS.seledin} style={{alignSelf: 'end'}}>
+          Buy Now
+        </Button>
     </StyledBasket>
   );
 }

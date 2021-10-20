@@ -15,7 +15,7 @@ const StyledInput = styled.input`
 `;
 
 //TODO:Refactor this one
-export function QuantityInput({onChange, initValue}) {
+export function QuantityInput({onChange, initValue, disable}) {
 
   const validationTimeout = 5; // .5 of the second in 10 steaps 
   const [value, SetValue] = useState(initValue);
@@ -85,8 +85,12 @@ export function QuantityInput({onChange, initValue}) {
   return (
     <Container>
       <StyledInput type="text" value={value} onChange={(e) => { onTextInputChange(e.target.value) }} />
-      <Button label='-' disable={value<=1}color={THEME_COLORS.orange} onClick={() => { onButton(-1) }} style={{margin: 0}}/>
-      <Button label='+' color={THEME_COLORS.green} onClick={() => { onButton(1) }} style={{marginLeft: 4}}/>
+      <Button disable={value<=1 || disable}color={THEME_COLORS.orange} onClick={() => { onButton(-1) }} style={{margin: 0}}>
+        -
+      </Button>
+      <Button disable={disable} color={THEME_COLORS.green} onClick={() => { onButton(1) }} style={{marginLeft: 4}}>
+        +
+      </Button>
     </Container>
   );
 

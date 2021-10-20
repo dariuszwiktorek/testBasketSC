@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { THEME_COLORS } from '../../app/styles';
 
-
+//TODO:Refactor the common conditions once the styling is finished
 const ButtonContainer = styled.button`
   flex: 1;
   font-size: ${({size}) => size==='large'? 1.6 : 1}rem;
@@ -15,13 +14,16 @@ const ButtonContainer = styled.button`
   margin: 10px;
   min-width: 30px;
   max-width: 220px;
+  pointer-events : ${({disable}) => disable? 'none' :'auto'};
+  cursor: ${({disable}) => disable? 'default' :'pointer'};
+  user-select: none;
 `;
 
 //common button with potential to add an icon
 export function Button(props) {
  return (
    <ButtonContainer {...props}>
-     {props.label}
+     {props.children}
    </ButtonContainer>
  )
 }

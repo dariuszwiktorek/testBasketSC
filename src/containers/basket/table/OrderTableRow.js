@@ -51,15 +51,16 @@ export default function OrderTableRow({
   pricePrefix,
   onUpdate,
   onDelete,
+  disable
 }) {
   
   return (
     <StyledRow>
         <ProductNameCell>{product}</ProductNameCell>
         <UnitPriceCell>{pricePrefix+unitPrice}</UnitPriceCell>
-        <QuantityInput initValue={quantity} onChange={(v)=>onUpdate(id, v)}/>
+        <QuantityInput disable={disable} initValue={quantity} onChange={(v)=>onUpdate(id, v)}/>
         <UnitPriceCell>{pricePrefix+cost}</UnitPriceCell>
-        <Button label='Delete' color={THEME_COLORS.red} onClick={() => { onDelete(id) }}>Delete</Button>
+        <Button disable={disable} color={THEME_COLORS.red} onClick={() => { onDelete(id) }}>Delete</Button>
     </StyledRow>
   );
 }

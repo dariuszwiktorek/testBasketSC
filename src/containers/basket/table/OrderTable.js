@@ -21,7 +21,7 @@ const TableHeader = styled.h3`
   margin-top: 0;
 `;
 
-export default function OrderTable({products, pricePrefix, onUpdate, onDelete}) {
+export default function OrderTable({products, pricePrefix, onUpdate, onDelete, disable}) {
   return (
     <StyledTable>
         <TableHeader>Review Your Order</TableHeader>
@@ -37,7 +37,8 @@ export default function OrderTable({products, pricePrefix, onUpdate, onDelete}) 
               cost={item.cost}
               pricePrefix={pricePrefix}
               onUpdate={onUpdate}
-              onDelete={onDelete}     
+              onDelete={onDelete}
+              disable={disable}    
             />
           )
         }
