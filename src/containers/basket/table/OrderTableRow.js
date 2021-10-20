@@ -45,6 +45,7 @@ export default function OrderTableRow({
   id,
   unitPrice,
   quantity,
+  cost,
   pricePrefix,
   onUpdate,
   onDelete,
@@ -61,7 +62,7 @@ export default function OrderTableRow({
         <ProductNameCell>{product}</ProductNameCell>
         <UnitPriceCell>{pricePrefix+unitPrice}</UnitPriceCell>
         <QuantityInput initValue={quantity} onChange={(v)=>onUpdate(id, v)}/>
-        <UnitPriceCell>{pricePrefix+unitPrice}</UnitPriceCell>
+        <UnitPriceCell>{pricePrefix+cost}</UnitPriceCell>
         <Button label='Delete' color={THEME_COLORS.red} onClick={() => { onDelete(id) }}>Delete</Button>
     </StyledRow>
   );

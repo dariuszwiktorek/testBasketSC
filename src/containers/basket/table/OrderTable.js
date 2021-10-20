@@ -30,10 +30,12 @@ export default function OrderTable({products, pricePrefix, onUpdate, onDelete}) 
         {
           Object.entries(products).map(([key, item]) => 
             <OrderTableRow 
+              key={key}
               product={item.name} 
               id={key}
               unitPrice={item.unitPrice}
               quantity={item.quantity}
+              cost={item.cost}
               pricePrefix={pricePrefix}
               onUpdate={onUpdate}
               onDelete={onDelete}     
