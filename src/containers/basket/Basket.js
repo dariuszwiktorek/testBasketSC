@@ -2,7 +2,8 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from "styled-components";
 import { THEME_COLORS } from '../../app/styles';
-import { deleteProduct, selectBasket, updateQuantity } from './basketSlice';
+import { Button } from '../../components/buttons/Button';
+import { deleteProduct, selectBasket, updateQuantity, buyNow } from './basketSlice';
 import OrderSummary from './OrderSummary';
 import OrderTable from "./table/OrderTable";
 
@@ -53,7 +54,7 @@ export default function Basket() {
         <Divider />
         <OrderSummary label='Total' amount={`${pricePrefix}${total.toFixed(2)}`} total/>
         <Divider />
-        
+        <Button label='Buy Now' onClick={() => { dispatch(buyNow())}} size={Button.SIZE.large} color={THEME_COLORS.seledin} style={{alignSelf: 'end'}}/>
     </StyledBasket>
   );
 }

@@ -4,11 +4,12 @@ import styled from 'styled-components';
 
 const ButtonContainer = styled.button`
   flex: 1;
-  font-size: ${({size}) => size==='large'? 2 : 1}rem;
+  font-size: ${({size}) => size==='large'? 1.6 : 1}rem;
+  font-weight: 600;
   background: ${({color}) => color};
   color: white;
-  border-radius: ${({size}) => size==='large'? 20 : 4}px;
-  padding: ${({size}) => size==='large'? 10 : 5}px;
+  border-radius: ${({size}) => size==='large'? 40 : 4}px;
+  padding: ${({size}) => size==='large'? '20px 40px' : '5px'};
   border: none;
   margin: 10px;
   min-width: 30px;
