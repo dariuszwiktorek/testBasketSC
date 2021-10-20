@@ -10,9 +10,9 @@ const pricePrefix = "£";
 const productsData = {
   [uuidv4()]: { name: "Apple", unitPrice: 0.52, quantity: 2 },
   [uuidv4()]: { name: "Banana", unitPrice: 0.67, quantity: 3 },
-  [uuidv4()]: { name: "Cinamon", unitPrice: 0.99, quantity: 1 },
-  [uuidv4()]: { name: "Dill", unitPrice: 1.09, quantity: 4 },
-  [uuidv4()]: { name: "Eggplant", unitPrice: 2.51, quantity: 5 }
+  // [uuidv4()]: { name: "Cinamon", unitPrice: 0.99, quantity: 1 },
+  // [uuidv4()]: { name: "Dill", unitPrice: 1.09, quantity: 4 },
+  // [uuidv4()]: { name: "Eggplant", unitPrice: 2.51, quantity: 5 }
 }
 
 const updateProductRecord = (product, quantity) => {
