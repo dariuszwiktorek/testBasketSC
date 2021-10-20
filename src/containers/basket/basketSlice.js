@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { postBasket } from './basketAPI';
 import { v4 as uuidv4 } from 'uuid';
 
+//TODO: This needs refactoring
 
 const vatMultiper = .2;
 const pricePrefix = "£";
