@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import { THEME_COLORS } from '../../../app/styles';
-import OrderTableRow from "./OrderTableRow";
+import OrderTableRow, {ColumnTitles} from "./OrderTableRow";
 
 
 const StyledTable = styled.div`
@@ -26,10 +26,11 @@ export default function OrderTable({products, pricePrefix, onUpdate, onDelete}) 
   return (
     <StyledTable>
         <TableHeader>Review Your Order</TableHeader>
+        <ColumnTitles />
         {
           Object.entries(products).map(([key, item]) => 
             <OrderTableRow 
-              product={item.product} 
+              product={item.name} 
               id={key}
               unitPrice={item.unitPrice}
               quantity={item.quantity}

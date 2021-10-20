@@ -9,7 +9,7 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  color: ${({total}) => {console.log('total',total);return total ? 'black' : THEME_COLORS.lightGrey}};
+  color: ${({total}) => {console.log('total',total);return total ? 'black' : 'grey'}};
   font-weight: 600;
   font-size: 1.2rem;
 `;

@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const ButtonContainer = styled.button`
   flex: 1;
   font-size: ${({size}) => size==='large'? 2 : 1}rem;
-  background: ${({color}) => color}rem;
+  background: ${({color}) => color};
   color: white;
   border-radius: ${({size}) => size==='large'? 20 : 4}px;
   padding: ${({size}) => size==='large'? 10 : 5}px;
@@ -15,10 +15,10 @@ const ButtonContainer = styled.button`
 `;
 
 //common button with potential to add an icon
-export function Button({disabled, label}) {
+export function Button(props) {
  return (
-   <ButtonContainer disabled={disabled}>
-     {label}
+   <ButtonContainer {...props}>
+     {props.label}
    </ButtonContainer>
  )
 }
